@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Novo Registro {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="title">Nome</label>
+        <input type="text" name="nome"
+               placeholder="Novo Nome" class="form-control"
+               value="{{ request.form['nome'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Data de Nascimento</label>
+        <input type="date" name="dt_nasc"
+               placeholder="Nova Data" class="form-control"
+               value="{{ request.form['dt_nasc'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Endereço</label>
+        <input type="text" name="endereco"
+               placeholder="Novo Local" class="form-control"
+               value="{{ request.form['endereco'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Grupo de Violação</label>
+        <input type="text" name="grupo_violacao"
+               placeholder="Grupo de Violação" class="form-control"
+               value="{{ request.form['grupo_violacao'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="content">Observações</label>
+        <textarea name="observacoes" placeholder="Observações"
+	class="form-control">{{ request.form['observacoes'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
+{% endblock %}
