@@ -44,7 +44,7 @@ pyasn1-modules==0.2.1
 pycairo==1.16.2
 pycups==2.0.1
 pycurl==7.43.0.6
-pygame==1.9.6
+
 PyGObject==3.38.0
 PyHamcrest==1.9.0
 PyNaCl==1.4.0
