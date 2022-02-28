@@ -1,44 +1,72 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h1>{% block title %} Novo Registro {% endblock %}</h1>
-
-<form method="post">
-    <div class="form-group">
-        <label for="title">Nome</label>
-        <input type="text" name="nome"
-               placeholder="Novo Nome" class="form-control"
-               value="{{ request.form['nome'] }}"></input>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <title>Banco de Dados Público sobre Violência. </title>
+    
+    </head>
+  <body>
+  <div>                    
+              <ul>
+    <li><a href="{{url_for('sobre')}}">Sobre</a></li>
+    <li><a href="{{url_for('create')}}">Novo Registro</a></li>
+    <li><a href="{{url_for('busca')}}">Busca</a></li>
+    <li><a href="{{url_for('logout')}}">Sair</a></li>
+   
+   </ul>
     </div>
+  
+    
+     <h1> Banco de Dados Público sobre Violência. </h1>
+     <p> Primeiro Atendimento.</p>
 
-    <div class="form-group">
-        <label for="title">Data de Nascimento</label>
-        <input type="date" name="dt_nasc"
-               placeholder="Nova Data" class="form-control"
-               value="{{ request.form['dt_nasc'] }}"></input>
-    </div>
-
-    <div class="form-group">
-        <label for="title">Endereço</label>
-        <input type="text" name="endereco"
-               placeholder="Novo Local" class="form-control"
-               value="{{ request.form['endereco'] }}"></input>
-    </div>
-
-    <div class="form-group">
-        <label for="title">Grupo de Violação</label>
-        <input type="text" name="grupo_violacao"
-               placeholder="Grupo de Violação" class="form-control"
-               value="{{ request.form['grupo_violacao'] }}"></input>
-    </div>
-
-    <div class="form-group">
-        <label for="content">Observações</label>
-        <textarea name="observacoes" placeholder="Observações"
-	class="form-control">{{ request.form['observacoes'] }}</textarea>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
-</form>
-{% endblock %}
+  {% for message in get_flashed_messages() %}
+    <h4>{{ message }}</h4>
+    {% endfor %}
+    
+    <form method="post">
+        <div class="form-group">
+            <label for="title">Nome</label>
+            <input type="text" name="nome"
+                   placeholder="Novo Nome" class="form-control"
+                   value="{{ request.form['nome'] }}"></input>
+        </div>
+    
+        <div class="form-group">
+            <label for="title">Data de Nascimento</label>
+            <input type="date" name="dt_nasc"
+                   placeholder="Nova Data" class="form-control"
+                   value="{{ request.form['dt_nasc'] }}"></input>
+        </div>
+    
+        <div class="form-group">
+            <label for="title">Endereço</label>
+            <input type="text" name="endereco"
+                   placeholder="Novo Local" class="form-control"
+                   value="{{ request.form['endereco'] }}"></input>
+        </div>
+    
+        <div class="form-group">
+            <label for="title">Grupo de Violação</label>
+            <input type="text" name="grupo_violacao"
+                   placeholder="Grupo de Violação" class="form-control"
+                   value="{{ request.form['grupo_violacao'] }}"></input>
+        </div>
+        <div class="form-group">
+            <label for="content">Observações</label>
+            <textarea name="observacoes" placeholder="Observações"
+        class="form-control">{{ request.form['observacoes'] }}</textarea>
+        </div>
+      <hr>
+       
+        <div class="form-group">
+            <button type=submit class="btn btn-primary" action="create">Registrar</button>
+        </div>
+    	 
+             </body>
+</html>

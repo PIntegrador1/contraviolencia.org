@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <title>Banco de Dados Público sobre Violência. </title>
+    
+    </head>
+  <body>
+  <div>                    
+              <ul>
+    <li><a href="{{url_for('sobre')}}">Sobre</a></li>
+    <li><a href="{{url_for('create')}}">Novo Registro</a></li>
+    <li><a href="{{url_for('busca')}}">Busca</a></li>
+    <li><a href="{{url_for('logout')}}">Sair</a></li>
+   
+   </ul>
+    </div>
+ 
+
+     <h1>Banco de Dados Público sobre Violência.</h1>
+
+     <p> Informações rápidas.</p>   
+
+     {% for message in get_flashed_messages() %}
+     <h2>{{ message }}</h2>
+     {% endfor %}
+     
+     <form method="post">
+        <label for="busca"></label>
+        <input type="text" name="busca"
+               placeholder="Digite Aqui" class="form-control"
+	       value="{{ request.form['busca'] }}">        
+        
+          <button type=submit class=btn action="busca">Buscar</button>
+     
+      
+     
+          <p>{{n}} linhas.</p>
+          <hr>
+          
+     <div class="post_id">   
+       {%for obj in obj%}
+         {%endfor%}
+
+    <table border="1">
+      <tr>
+         <td> Referencia</td>
+          <td>Id</td>
+          <td>Nome</td>
+          <td>Data de Nascimento</td>
+          <td>Endereço</td>
+          <td>Grupo de Violação</td>
+          <td>Observações</td>
+           </tr>
+      {%for obj in obj%}
+      <a href="{{url_for('busca',obj=obj[0])}}">
+            
+               <tr>
+          <td>{{obj[1]}}</td>
+          <td>{{obj[0]}}</td>
+          <td>{{obj[2]}}</td>
+          <td>{{obj[3]}}</td>
+          <td>{{obj[4]}}</td>
+          <td>{{obj[5]}}</td>
+          <td>{{obj[6]}}</td>
+            </tr>
+              </a>
+             {%endfor%}
+       
+        </table>
+     </div
+    
+  </body>           
+  
+</html>
+

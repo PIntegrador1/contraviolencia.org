@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="static/css/style.css">
+  <style>
+    form {
+      border: 1px #eee solid;
+      width: 520px;
+      margin: 0px;
+      height: 120px;
+      text-align: center;
+      padding: 0px;
+      font-size: 12px;
+      font-family: Verdana, Tahoma, sans-serif;
+      size: 50px;
+      display: inline-block;
+    }
+
+    table,
+    tr,
+    td {
+      width: 200px;
+    }
+  </style>
+
+  <title>Banco de Dados Público sobre Violência. </title>
+
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li><a href="{{url_for('sobre')}}">Sobre</a></li>
+      <li><a href="{{url_for('create')}}">Novo Registro</a></li>
+      <li><a href="{{url_for('busca')}}">Busca</a></li>
+      <li><a href="{{url_for('logout')}}">Sair</a></li>
+
+    </ul>
+  </div>
+
+  <h1> Banco de Dados Público sobre Violência. </h1>
+
+
+  {% for message in get_flashed_messages() %}
+  <h4>{{ message }}</h4>
+  {% endfor %}
+
+  <p> Visão Atualizada dos Registros.</p>
+
+  <div>
+    <img src="static/css/image/graf.png"" alt=" graf" style="width:500px;height:400px;"></img>
+  </div>
+  <hr>
+  <h3> {{n_linha}} Registros. </h3>
+
+  <!--Configurações da Legenda do Gráfico-->
+  <form>
+    <table border="1">
+     <tr>
+        <td> Grupo </td>
+     </tr>
+     {%for l in legenda[0] %}
+      <tr>
+        <td>{{l}}</td>
+        {%endfor%}
+      </tr>
+    </table>
+    <table border="'1">
+      <tr>
+        <td> Quantidade </td>
+      </tr>
+      {%for i in legenda[1] %}
+      <tr>
+        <td> {{i}}</td>
+        {%endfor%}     
+      </tr>
+     
+    </table>
+    
+
+              
+          
+             
+
+
+  </form>
+
+
+
+
+  <hr>
+  <footer>
+    <ul>
+      <h3> Página Mais: <button> <a href="{{url_for('index')}}">Detalhar. </a></button> </h3>
+    </ul>
+  </footer>
+
+</body>
+
+</html>

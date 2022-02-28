@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <title>Banco de Dados Público sobre Violência. </title>
+    
+    </head>
+  <body>
+<div>
+   <h1>Banco de Dados Público sobre Violência. </h1>
+   <div> 
+       <h2> Interface de Autenticação. </h2>
+       <h3> Você desconectou seu usuário. </h3>
+       
+       {% for message in get_flashed_messages() %}
+     <h4>{{ message }}</h4>
+        {% endfor %}
+</div>
+    
+              <button><a href="{{url_for('validar')}}">Entrar novamente</a></button>
+
+
+              
+ </body>
+ 
+</html>

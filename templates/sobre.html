@@ -1,9 +1,53 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <title>Banco de Dados Público sobre Violência. </title>
+    
+    </head>
+  <body>
+  <div>                    
+              <ul>
+    <li><a href="{{url_for('sobre')}}">Sobre</a></li>
+    <li><a href="{{url_for('create')}}">Novo Registro</a></li>
+    <li><a href="{{url_for('busca')}}">Busca</a></li>
+    <li><a href="{{url_for('logout')}}">Sair</a></li>
+   
+   </ul>
+    </div> 
 
-{% block content %}
-        <h2> Ferramenta Estatistica de Apoio á Politicas Públicas.</h2>
-        
-	<center> Este formulário é um trabalho colaborativo do Projeto Integrador1 de Estudantes de Computação da UNIVESP (Polo Marília_SP) e destina-se a dar suporte a registros de violência doméstica a instituições públicas que prestam primeiro atendimento a vulneráveis, e sem aparato estatistico ou informacional nestes casos. Convém citar a importância do registro público oficial (Boletim de Ocorrência Policial) para casos mais graves. 
-		</center>
+  <div>
+   <h1> Ferramenta Estatistica de Apoio á Politicas Públicas.</h1>
+   <hr>
+    <h2>Este formulário é um trabalho colaborativo do Projeto Integrador1 de Estudantes de Computação da UNIVESP (Polo Marília_SP)
+     e destina-se a dar suporte a registros de violência a instituições públicas que prestam primeiro atendimento a vulneráveis, 
+     e sem aparato estatistico ou informacional nestes casos. Convém citar a importância do registro público oficial (Boletim de Ocorrência Policial) para casos mais graves. 
+		 </h2>
+		 <p> Giulia Nascimento Martins RA 2012068 </p>
+		 <p> Paulo Henrique Colombani da Silva RA 2008413 </p>
+		 <p> Wander Rosa Hayashida RA 2007338 </p>
+		 </div>
+   
+		 <hr>
+            <footer> 
+              <button> <a href="https://github.com/PIntegrador1/contraviolencia.org" target="_blank" rel="noopener noreferrer"> GitHub </a> </button> 
+           <br>
+              <button>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSe33CSaQMs9R5e0JI9Y9v0cVriNuyRWPxiQnYGXNLypxZb9mA/viewform?vc=0&c=0&w=1&flr=0"target='_blank' rel="noopener noreferrer"> Link Pesquisa. </a> </button>
+            </button>
+            </footer>
+                          
+   
+            </body>
+</html>
+		 
+		 
+		    
+		    
 		
-{% endblock %}
+

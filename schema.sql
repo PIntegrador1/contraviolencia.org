@@ -1,1 +1,0 @@
-CREATE TABLE registros (id INTEGER PRIMARY KEY AUTOINCREMENT, created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, nome varchar(60)  NULL, dt_nasc DATE NOT NULL, endereco varchar(60) NULL, grupo_violacao varchar(60) NOT NULL, observacoes varchar(10000) NOT NULL);

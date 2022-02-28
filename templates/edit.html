@@ -1,49 +1,225 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html >
 
-{% block content %}
-<h1>{% block title %} Editar "{{ post['nome'] }}" {% endblock %}</h1>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <link rel="stylesheet" href="static/css/style.css">
+
+  <!-- CSS Interno para novos IDs --->
+  <style>
+    html,body{
+    min-height: 100%;
+    padding: 10px;
+    margin: 2px;
+    border: 0px;
+    color: black;
+    text-align: center;
+    background-color: white;
+    background-image: url(/static/css/image/tema.jpg);
+    display: inline-block;
+   }
+div.post_id{
+    
+    min-height: 100%;
+    padding: 10px;
+    margin: 2px;
+    border: 0px;
+    color: black;
+    text-align: center;
+    display: inline-block;
+}
+h1 {
+    border: 2px #eee solid;
+    color: blue;
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+}
+
+h2 {
+    border: 2px #eee solid;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    font-size:18px;
+}
+h3 {
+    border: 2px #eee solid;
+    color: black;
+    text-align: right;
+    padding: 12px;
+    font-size:15px;
+    }
+h4{
+    border: 1px rgb(12, 11, 11) ;
+    background-color: rgb(54, 236, 54);
+    color: red;
+    text-align: center;
+    padding: 12px;
+    font-size:15px;
+   
+}
+p{
+    font-size: 12px;
+    color: black;
+    text-align: center;
+    }
+
+* {
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12px;
+}
+ 
+ul {
+    margin: 0;
+    padding:0;
+}
+ 
+li {
+    list-style: none; 
+    margin: 10px;
+    display: inline;
+}
+li a {
+    padding: 5px 10px; 
+    margin:0;
+    border: 0px solid #f00; 
+    background: #903;
+    text-decoration: none;
+    color:#FFF;
+    /* cantos arredondados */
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+li a:hover {
+    background: #CCC;
+    color: #000; 
+    border-color: #000;
+}
+
+label {
+    border:0px solid #999;
+    outline: 0;
+    width: 420px;
+    text-align:left;
+    display: inline-block;
+        }
+input{
+    border:1px solid #999;
+    width: 420px;
+    text-align: left;
+    display: inline-block;
+    
+      }
+
+input[type=submit]:hover{
+    padding: 0px;
+    width: 420px;
+    height: 100px;
+    resize: none;
+    outline: 0px;
+    border: 1px solid #999;
+    display: inline-block;
+     }
+textarea {
+    padding: 1px;
+    width: 420px;
+    height: 100px;
+    margin: 1px;
+    text-align: left;
+    resize: none;
+    outline: 0;
+    border: 1px solid #999;;
+    display: inline-block;
+    
+
+      }
+textarea2 {
+    padding: 2px;
+    width: 520px;
+    height: 0px;
+    margin: 0px;
+    text-align: left;
+    resize: none;
+    outline: 0;
+    border: 0;
+    display: inline-block;
+         }
+
+  </style>
+  <!-- Fim CSS interno.-->
+
+  <title>Banco de Dados Público sobre Violência. </title>
+
+</head>
+
+<body>
+  <div class=".post_id">
+  <div>
+    <ul>
+      <li><a href="{{url_for('sobre')}}">Sobre</a></li>
+      <li><a href="{{url_for('create')}}">Novo Registro</a></li>
+      <li><a href="{{url_for('busca')}}">Busca</a></li>
+      <li><a href="{{url_for('logout')}}">Sair</a></li>
+
+    </ul>
+  </div>
+  
+<h1> Editar "{{ post_id[2] }}"</h1>
+
+<hr>
 <form method="post">
     <div class="form-group">
-        <label for="Nome">Nome</label>
-        <input type="text" name="Nome" placeholder="Novo Nome"
-               class="form-control"
-               value="{{ request.form['nome'] or post['nome'] }}">
-        </input>
-
-     <div class="form-group">
-        <label for="Data_de_Nascimento">Data de Nascimento</label>
-        <input type="text" name="Data_de_Nascimento" placeholder="Nova Data"
-               class="form-control"
-               value="{{ request.form['dt_nasc'] or post['dt_nasc'] }}">
-        </input>
-
-    <div class="form-group">
-        <label for="Endereço">Endereço</label>
-        <input type="text" name="Endereço" placeholder="Novo Endereço"
-               class="form-control"
-               value="{{ request.form['endereco'] or post['endereco'] }}">
-        </input>
+        <label for="title">Nome</label>
+        <input type="text" name="nome"
+               placeholder="Novo Nome" class="form-control"
+               value="{{ request.form['nome']  or post_id[2] }}"></input>
     </div>
 
     <div class="form-group">
-        <label for="Grupo_de_Violação">Grupo de Violação</label>
-        <input type="text" name="Grupo_de_Violação" placeholder="Grupo_de_Violação"
-               class="form-control"
-               value="{{ request.form['grupo_violacao'] or post['grupo_violacao'] }}">
-        </input>
-
-    <div class="form-group">
-        <label for="Observações">Observações</label>
-        <textarea name="Observações" placeholder="Observações"
-                  class="form-control">{{ request.form['observacoes'] or post['observacoes'] }}</textarea>
+        <label for="title">Data de Nascimento</label>
+        <input type="date" name="dt_nasc"
+               placeholder="Nova Data" class="form-control"
+               value="{{ request.form['dt_nasc']  or post_id[3] }}"></input>
     </div>
 
-</form>
+    <div class="form-group">
+        <label for="title">Endereço</label>
+        <input type="text" name="endereco"
+               placeholder="Novo Local" class="form-control"
+               value="{{ request.form['endereco'] or post_id[4] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Grupo de Violação</label>
+        <input type="text" name="grupo_violacao"
+               placeholder="Grupo de Violação" class="form-control"
+               value="{{ request.form['grupo_violacao'] or post_id [5] }}"></input>
+    </div>
+    <div class="form-group">
+        <label for="content">Observações</label>
+        <textarea name="observacoes" placeholder="Observações"
+    class="form-control">{{ request.form['observacoes'] or post_id[6]}}</textarea>
+    </div>
+     
+    <div class="form-group">
+        <button type=submit class="btn btn-primary" action="edit"
+        onclick="return confirm('Deseja ATUALIZAR este registro?')">Atualizar</button>
+    </div>
+  </form>
 <hr>
-<form action="{{ url_for('delete', id=post['id']) }}" method="POST">
-    <input type="submit" value="Delete Registro"
-            class="btn btn-danger btn-sm"            onclick="return confirm('Você tem certeza que deseja DELETAR o último registro?')">
+<form action="{{ url_for('delete',post_id=post_id[0]) }}" method="POST">
+    <button type=submit class="btn btn-primary" action="delete"
+             onclick="return confirm('Você tem certeza que deseja DELETAR este registro?')">Deletar</button>
 </form>
-{% endblock %}
+</div>
+
+</body>
+
+</html>
+
 

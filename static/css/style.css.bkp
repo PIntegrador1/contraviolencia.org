@@ -1,0 +1,32 @@
+h1 {
+    border: 2px #eee solid;
+    color: blue;
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    border: 2px #eee solid;
+    color: black;
+    text-align: center;
+    padding: 9px;
+}
+
+body{
+    border: 2px #eee solid;
+    color: yellow;
+    text-align: right;
+    padding: 8px;
+    }
+ 
+.rodape {
+    background-color: black;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin: auto auto;
+    padding: 10px 5px;
+.divrodape {
+    margin: 80px 0 0 0;
+}

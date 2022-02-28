@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <title>Banco de Dados Público sobre Violência. </title>
+    
+    </head>
+  <body>
+  <h1> Admin Tools </h1>
+
+  <p> Manutenção do Banco de Dados. </p>
+  {% for message in get_flashed_messages() %}
+  <h4>{{ message }}</h4>
+  {% endfor %}
+
+  <form method="post">
+    <label for="tabela"> Nome da Tabela: </label>
+    <input type="text" name="table"
+           placeholder="Nome da tabela" class="form-control"
+     value="{{ request.form['table'] }}">        
+    
+      <button type=submit class=btn action="admin"
+      onclick="return confirm('Deseja realmente ZERAR esta tabela?')">Reset</button>
+ <form>
+
+<hr>
+</body>
+</html>

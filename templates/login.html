@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <title>Banco de Dados Público sobre Violência. </title>
+    
+    </head>
+  <body>
+ <div>
+     
+        <h1> Banco de Dados Público sobre Violência.</h1>
+        <h2> Interface de Autenticação </h2>
+
+        {% for message in get_flashed_messages() %}
+        <h4>{{ message }}</h4>
+           {% endfor %}
+
+<form class="login-form" method=POST>
+         <div class="form-group">
+        <label form="title">Usuario</label>
+        <input type="text" name="user"
+               placeholder="Novo Usuario" class="form-control"
+               value="{{ request.form['user'] }}"></input>
+               
+               
+        <label form="title">Senha</label>
+        <input type="password" name="password"
+               placeholder="Nova Senha" class="form-control"
+               value="{{ request.form['password'] }}"></input>
+
+              <button type=submit class=btn  value="login">Novo</button>
+              
+              
+    </div>
+   
+              
+       
+</form>
+    
+   
+            </body>
+</html>
+
+	
+		

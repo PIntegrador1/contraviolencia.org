@@ -1,0 +1,43 @@
+TUTORIAL HEROKU
+
+//Parte 1 Baixando arquivos git 
+
+$git clone git@github.com:pasta_raiz/repositorio.git
+
+$cd /pasta_git_clone
+
+
+//Parte 2 - Atualizar pasta git 
+$git init 
+
+$git add .
+
+$git commit -m "comentarios"
+
+$git push origin main
+
+//Parte 3- Atualizar heroku git
+
+->Importante tenha certeza que os NOVOS ARQUIVOS estarão dentro da pasta.
+
+
+$git init (inializar)
+
+$git add . (adicionar)
+
+$git commit -m "repositio Heroku" (salvar no repositorio)
+
+
+$heroku login (proceder com login)
+
+
+$heroku create <nome_respositorio)  ->criar pagina web.
+
+No respositorio criado selecionar ferramenta_de Banco_de _dados free
+
+-> retorno Para atualizar página já publicada.
+
+$git push heroku main ->publicar na web.
+
+$heroku open ->visualizar pagina final.
+
