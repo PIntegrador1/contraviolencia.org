@@ -8,10 +8,11 @@ from werkzeug.exceptions import abort
 
 def get_db_connection():
     # Criando conexão no banco.
-    conn = psycopg2.connect(host='localhost',
-                            database='$(heroku config:get DATABASE_URL -a contraviolencia.org) web: gunicorn wsgi:app ',
-                            user='postgres',
-                            password='postgres')
+    conn = psycopg2.connect(host='ec2-54-160-103-135.compute-1.amazonaws.com',
+                            database='d1na4mcaapv3a9',
+                            user='evtiqnayntanna',
+                            password='8a0b54b5c8fc50e5d49d3cebfe198db1fac07a335b587db8b7f8c41b2e857b93',
+                            port='5432' )
     #Espelhando.
     return conn
 
