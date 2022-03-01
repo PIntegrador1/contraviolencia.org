@@ -1,14 +1,14 @@
 import numpy as np
 from  matplotlib import pyplot as plt
 import pandas as pd
-import psycopg
+import psycopg2
 from flask import Flask, render_template, request, url_for, flash, redirect, session, make_response
 from datetime import timedelta
 from werkzeug.exceptions import abort
 
 def get_db_connection():
     # Criando conexão no banco.
-    conn = psycopg.connect(host='ec2-54-160-103-135.compute-1.amazonaws.com',
+    conn = psycopg2.connect(host='ec2-54-160-103-135.compute-1.amazonaws.com',
                             database='d1na4mcaapv3a9',
                             user='evtiqnayntanna',
                             password='8a0b54b5c8fc50e5d49d3cebfe198db1fac07a335b587db8b7f8c41b2e857b93',
