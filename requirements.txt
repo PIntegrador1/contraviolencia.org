@@ -116,12 +116,8 @@ pyparsing==2.4.7
 pyrsistent==0.18.1
 PySimpleGUI==4.56.0
 PySimpleSOAP==1.16.2
-pysmbc==1.0.23
-python-apt==2.2.1
 python-dateutil==2.8.1
 python-debian==0.1.39
-python-debianbts==3.1.0
-python-libtorrent==1.2.9
 python-pam==1.8.4
 python-xapp==2.0.2
 python-xlib==0.29
