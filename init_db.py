@@ -1,13 +1,11 @@
 import psycopg2
 #Gerando conexão e bamco de dados padrão
 
-connection = psycopg2.connect(host='ec2-54-160-103-135.compute-1.amazonaws.com',
-                            database='d1na4mcaapv3a9',
-                            user='evtiqnayntanna',
-                            password='8a0b54b5c8fc50e5d49d3cebfe198db1fac07a335b587db8b7f8c41b2e857b93',
-                            port='5432' )
-                          
-
+connection =  psycopg2.connect(host='ec2-3-218-71-191.compute-1.amazonaws.com',
+                            database='da6f4afhp535hl',
+                            user='bwpvtmbqsdcvgi',
+                            password='a61a16e4f46cb9cff6e672d0e23afeb53f4ae3a14af7198893b4efd4124708e8',
+                            port='5432')
 cur = connection.cursor()
 
 with open("tables.sql") as arquivo:
