@@ -1,5 +1,4 @@
-TUTORIAL HEROKU
-
+ TUTORIAL GIT
 //Parte 1 Baixando arquivos git 
 
 $git clone git@github.com:pasta_raiz/repositorio.git
@@ -15,6 +14,8 @@ $git add .
 $git commit -m "comentarios"
 
 $git push origin main
+
+TUTORIAL HEROKU
 
 //Parte 3- Atualizar heroku git
 
@@ -39,5 +40,24 @@ No respositorio criado selecionar ferramenta_de Banco_de _dados free
 
 $git push heroku main ->publicar na web.
 
+
 $heroku open ->visualizar pagina final.
 
+TUTORIAL ATUALIZAÇÃO APP HEROKU  
+#Atualizar app Heroku e Corrigindo erros:
+
+1. $git add . # Sem $git init (ja iniciado anteriormente)
+2. $git commit -m "heroku" (salvar no repositorio)
+3. $git push heroku main ->publicar na web. #Sem $heroku login (ja iniciado na mesma sessão)
+
+#CONFIS APP HEROKU
+#Com a Pasta pronta, framework montado
+
+1. Criar requiriments.txt: # dentro da pasta do projeto.  Requiriments.txt, conunto das bibliotecas para rodar o projeto.
+$pip3 freeze > requiriments.txt
+
+2, Instalar dependencias do projeto:
+$pip install -r requirements.txt
+
+3. Criar procfile:
+$editor procfile (sem extensão) com o conteúdo básico para inicializar app. Exemplo: python app = web: gunicorn wsgi:app   
