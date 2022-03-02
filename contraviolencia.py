@@ -10,7 +10,7 @@ from flask import Flask, render_template, request, url_for, flash, redirect
 def get_db_conection():
     # Criando conexão no banco.
     global eng
-    eng =create_engine("postgresql://bwpvtmbqsdcvgi:a61a16e4f46cb9cff6e672d0e23afeb53f4ae3a14af7198893b4efd4124708e8@ec2-3-218-71-191.compute-1.amazonaws.com:5432/da6f4afhp535hl")
+    eng =create_engine("postgres://xpwppmkyaydnub:4974f59decd1333d4b3fa2ef7f97b02adc2bab862152ec0b08ec0f18b470cacb@ec2-52-204-196-4.compute-1.amazonaws.com:5432/dc2ku2u2p57ogp")
     
     #Criação de Sessão no banco.
     global db
