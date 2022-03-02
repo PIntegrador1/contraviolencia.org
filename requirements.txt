@@ -143,7 +143,5 @@ virtualenv-clone==0.5.7
 wcwidth==0.2.5
 wrapt==1.13.3
 WTForms==3.0.1
-xdg==5
-yarg==0.1.96
 zipp==1.0.0
 zope.interface==5.2.0
