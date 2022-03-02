@@ -96,7 +96,6 @@ pyasn1-modules==0.2.1
 pycairo==1.16.2
 pycparser==2.21
 pycurl==7.43.0.6
-pygame==1.9.6
 Pygments==2.7.1
 PyHamcrest==1.9.0
 pyinotify==0.9.6
