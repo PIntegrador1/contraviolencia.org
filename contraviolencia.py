@@ -35,7 +35,7 @@ def get_id(post_id):
 #Função init_py Flask.
 app = Flask(__name__)
 
-if __name__=="main":
+if __name__=="__main__":
     app.run()
     
 app.run(debug=True)
