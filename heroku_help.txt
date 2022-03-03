@@ -54,7 +54,8 @@ TUTORIAL ATUALIZAÇÃO APP HEROKU
 #Com a Pasta pronta, framework montado
 
 1. Criar requiriments.txt: # dentro da pasta do projeto.  Requiriments.txt, conunto das bibliotecas para rodar o projeto.
-$pip3 freeze > requiriments.txt
+$pip install pipreqs
+$pipreqs </pasta/projeto>
 
 2, Instalar dependencias do projeto:
 $pip install -r requirements.txt
