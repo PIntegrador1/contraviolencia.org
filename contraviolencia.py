@@ -10,13 +10,12 @@ from flask import Flask, render_template, request, url_for, flash, redirect
 def get_db_conection():
     # Criando conexão no banco.
     global eng
-    eng =create_engine("postgres://xpwppmkyaydnub:4974f59decd1333d4b3fa2ef7f97b02adc2bab862152ec0b08ec0f18b470cacb@ec2-52-204-196-4.compute-1.amazonaws.com:5432/dc2ku2u2p57ogp")
+    eng =create_engine("postgres://gptmbrpnkclgjd:0dfbdfa12aa1d57939e7808873522f52184bb7d88142734618fa45b7bbbc187d@ec2-54-157-160-218.compute-1.amazonaws.com:5432/delep6os9o1a99")
     
     #Criação de Sessão no banco.
     global db
     db = scoped_session(sessionmaker(bind=eng))
-    
-        
+            
     #Espelhando.
     return  eng
 
