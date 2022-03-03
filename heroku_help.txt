@@ -47,7 +47,7 @@ TUTORIAL ATUALIZAÇÃO APP HEROKU
 #Atualizar app Heroku e Corrigindo erros:
 
 1. $git add . # Sem $git init (ja iniciado anteriormente)
-2. $git commit -m "heroku" (salvar no repositorio)
+2. $git commit -am "heroku" (salvar no repositorio)
 3. $git push heroku main ->publicar na web. #Sem $heroku login (ja iniciado na mesma sessão)
 
 #CONFIS APP HEROKU
