@@ -34,7 +34,12 @@ def get_id(post_id):
 
 #Função init_py Flask.
 app = Flask(__name__)
+
+if __name__=="main":
+    app.run()
+    
 app.run(debug=True)
+
 app.config['SECRET_KEY'] = 'banco'
 
 @app.route('/', methods=['GET','POST'])
