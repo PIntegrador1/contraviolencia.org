@@ -40,7 +40,7 @@ if __name__=="__main__":
     
 app.run(debug=True)
 app.config['SECRET_KEY'] = 'banco'
-app.root_path = '/'
+app.root_path = '/' + 'templates/index.html'
 app.r
 
 @app.route('/', methods=['GET','POST'])
