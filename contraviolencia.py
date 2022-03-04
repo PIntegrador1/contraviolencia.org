@@ -39,8 +39,8 @@ if __name__=="__main__":
     app.run()
     
 app.run(debug=True)
-
 app.config['SECRET_KEY'] = 'banco'
+app.root_path + '/' + 'templates/validar.html'
 
 @app.route('/', methods=['GET','POST'])
 def validar():
