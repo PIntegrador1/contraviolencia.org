@@ -40,10 +40,11 @@ if __name__=="__main__":
     
 app.run(debug=True)
 app.config['SECRET_KEY'] = 'banco'
-app.root_path + '/' + 'templates/validar.html'
+app.root_path = '/'
+app.r
 
 @app.route('/', methods=['GET','POST'])
-def validar():
+def index():
     if request.method == 'POST':
         
         #Abrir conexão
@@ -61,13 +62,13 @@ def validar():
         
         if id is None:
             flash('usuario ou senha não conferem! Por favor, redigite ou cadastre-se.')
-            return render_template('validar.html')
+            return render_template('index.html')
             
                 
                 
         #Saida.
         return redirect(url_for('logged',usuario=usuario))
-    return render_template('validar.html')
+    return render_template('index.html')
     
 @app.route('/login', methods=['GET','POST'])
 def login():
@@ -91,7 +92,7 @@ def login():
         
         #Saida
         flash(f" {usuario} cadastrado com SUCESSO!")
-        return redirect(url_for('validar'))
+        return redirect(url_for('index'))
     return render_template('login.html')
 
 @app.route('/logout')
@@ -169,8 +170,8 @@ def posts(post_id):
     return render_template('posts.html',posts=posts)
    
       
-@app.route('/index')
-def index():
+@app.route('/tabela')
+def tabela():
     #Abrir Conexão.
     eng = get_db_conection()
         
@@ -184,7 +185,7 @@ def index():
     n_linha= (len(posts))
                
     #Saida.
-    return render_template('index.html',posts=posts,n_linha=n_linha)
+    return render_template('tabela.html',posts=posts,n_linha=n_linha)
 
   
 

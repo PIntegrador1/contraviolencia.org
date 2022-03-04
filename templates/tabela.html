@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  <title>Banco de Dados Público sobre Violência. </title>
+
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li><a href="{{url_for('sobre')}}">Sobre</a></li>
+      <li><a href="{{url_for('create')}}">Novo Registro</a></li>
+      <li><a href="{{url_for('busca')}}">Busca</a></li>
+      <li><a href="{{url_for('logout')}}">Sair</a></li>
+
+    </ul>
+  </div>
+
+
+  <h1> Banco de Dados Público sobre Violência.</h1>
+
+  {% for message in get_flashed_messages() %}
+  <h4>{{ message }}</h4>
+  {% endfor %}
+  
+     <p> Visão Detalhada dos Registros.</p>
+
+     <h3> {{n_linha}} Registros.</h3>
+     <form>
+
+ <div class=".post_id">
+    {%for posts in posts%}
+         {%endfor%}
+
+    <table border="1">
+      <tr>
+         <td> Referencia</td>
+          <td>Id</td>
+          <td>Nome</td>
+          <td>Data de Nascimento</td>
+          <td>Endereço</td>
+          <td>Grupo de Violação</td>
+          <td>Observações</td>
+          <td></td>
+           </tr>
+
+      {%for posts in posts%}
+        <tr>
+        <td>{{posts[1]}}</td>
+          <td><a href="{{url_for('posts',post_id=posts[0])}}">
+            <span class="badge badge-primary">{{ posts[0] }}</span>
+          </a>
+          </td>
+          <td>{{posts[2]}}</td>
+          <td>{{posts[3]}}</td>
+          <td>{{posts[4]}}</td>
+          <td>{{posts[5]}}</td>
+          <td>{{posts[6]}}</td>
+          <td> 
+             <a href="{{ url_for('edit',post_id=posts[0]) }}">
+              <span class="badge badge-warning">Editar</span></a></td>
+          </tr>
+           {%endfor%}
+       
+        </table>
+      </div>
+      </form>
+ <hr>
+ <p> Fim Registros.</p>
+  
+</body>
+
+
+</html
