@@ -11,7 +11,7 @@ def get_db_conection():
     global eng
     
     #Servidor Heroku.
-    eng =create_engine("postgresql://gptmbrpnkclgjd:0dfbdfa12aa1d57939e7808873522f52184bb7d88142734618fa45b7bbbc187d@ec2-54-157-160-218.compute-1.amazonaws.com:5432/delep6os9o1a99")
+    #eng = create_engine("postgresql://gptmbrpnkclgjd:0dfbdfa12aa1d57939e7808873522f52184bb7d88142734618fa45b7bbbc187d@ec2-54-157-160-218.compute-1.amazonaws.com:5432/delep6os9o1a99")
     
     #Servidor local.
     #eng = create_engine("postgresql://root:postgres@localhost:5432/postgres")
@@ -39,11 +39,9 @@ def get_id(post_id):
 #Função init_py Flask.
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'banco'
-app.root_path + '/' + 'templates/index.html'
-
 
  
-@app.route('/index', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
         
