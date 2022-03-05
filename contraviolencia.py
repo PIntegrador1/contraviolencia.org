@@ -1,4 +1,3 @@
-from xml.sax import SAXNotSupportedException
 import numpy as np
 from  matplotlib import pyplot as plt
 import pandas as pd
@@ -39,11 +38,12 @@ def get_id(post_id):
 
 #Função init_py Flask.
 app = Flask(__name__)
-#app.run(port=os.environ.get("PORT", 8080))
 app.config['SECRET_KEY'] = 'banco'
+app.root_path + '/' + 'templates/index.html'
 
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST']) 
+@app.route('/index', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
         
@@ -64,8 +64,7 @@ def index():
             flash('usuario ou senha não conferem! Por favor, redigite ou cadastre-se.')
             return render_template('index.html')
             
-                
-                
+                       
         #Saida.
         return redirect(url_for('logged',usuario=usuario))
     return render_template('index.html')
@@ -97,11 +96,11 @@ def login():
 
 @app.route('/logout')
 def logout():
-    db.close_all()
     return render_template('logout.html')
 
 @app.route('/<usuario>/logged', methods=['GET','POST'])
 def logged(usuario):
+    app.root_path + '/' + 'templates/result.html'
     #Saida.   
     return render_template('logged.html',usuario=usuario)
 
