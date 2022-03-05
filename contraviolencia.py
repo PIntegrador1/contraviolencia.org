@@ -160,7 +160,7 @@ def admin():
        
         #Saida
         flash(f"Os registros foram TOTALMENTE apagados na tabela {tabela}.")
-        return redirect(url_for('validar'))
+        return redirect(url_for('tabela'))
     return render_template('admin.html')
 
 @app.route('/<post_id>/posts', methods=['GET','POST'])
@@ -263,7 +263,7 @@ def create():
             return redirect(url_for('index'))
 
         #Saida.
-        return redirect(url_for('index'))
+        return redirect(url_for('tabela'))
     return render_template('create.html')
 
 @app.route('/<post_id>/edit',methods=('GET', 'POST'))
@@ -328,6 +328,6 @@ def delete(post_id):
        
         #Saida
         flash(f"Registro '{post_id[0]}' DELETADO!!!")
-        return redirect(url_for('index'))
-    return render_template('index.html')
+        return redirect(url_for('tabela'))
+    return render_template('tabela.html')
     
