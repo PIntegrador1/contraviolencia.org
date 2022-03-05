@@ -10,7 +10,12 @@ from flask import Flask, render_template, request, url_for, flash, redirect
 def get_db_conection():
     # Criando conexão no banco.
     global eng
-    eng =create_engine("postgres://gptmbrpnkclgjd:0dfbdfa12aa1d57939e7808873522f52184bb7d88142734618fa45b7bbbc187d@ec2-54-157-160-218.compute-1.amazonaws.com:5432/delep6os9o1a99")
+    
+    #Servidor Heroku.
+    #eng =create_engine("postgresql://gptmbrpnkclgjd:0dfbdfa12aa1d57939e7808873522f52184bb7d88142734618fa45b7bbbc187d@ec2-54-157-160-218.compute-1.amazonaws.com:5432/delep6os9o1a99")
+    
+    #Servidor local.
+    eng = create_engine("postgresql://root:postgres@localhost:5432/postgres")
     
     #Criação de Sessão no banco.
     global db
@@ -97,8 +102,6 @@ def logout():
 
 @app.route('/<usuario>/logged', methods=['GET','POST'])
 def logged(usuario):
-    app.root_path + '/' + 'templates/result.html'
-    
     #Saida.   
     return render_template('logged.html',usuario=usuario)
 
