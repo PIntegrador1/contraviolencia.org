@@ -4,7 +4,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from flask import Flask, render_template, request, url_for, flash, redirect
-
+import psycopg2
 
 def get_db_conection():
     # Criando conexão no banco.

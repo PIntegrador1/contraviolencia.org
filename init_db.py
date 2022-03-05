@@ -1,6 +1,7 @@
 #Bibliotecas
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
+import psycopg2
 
 # Criando conexão no banco.
 global eng
