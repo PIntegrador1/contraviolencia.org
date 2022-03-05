@@ -38,9 +38,8 @@ app = Flask(__name__)
 if __name__=="__main__":
     app.run()
     
-app.run(debug=True)
+app.run(port=os.environ.get("PORT", 8080))
 app.config['SECRET_KEY'] = 'banco'
-app.root_path = '/' + 'templates/index.html'
 
 
 @app.route('/', methods=['GET','POST'])
