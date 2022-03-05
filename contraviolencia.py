@@ -34,11 +34,7 @@ def get_id(post_id):
 
 #Função init_py Flask.
 app = Flask(__name__)
-
-if __name__=="__main__":
-    app.run()
-    
-app.run(port=os.environ.get("PORT", 8080))
+#app.run(port=os.environ.get("PORT", 8080))
 app.config['SECRET_KEY'] = 'banco'
 
 
