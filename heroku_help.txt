@@ -62,3 +62,6 @@ $pip install -r requirements.txt
 
 3. Criar procfile:
 $editor procfile (sem extensão) com o conteúdo básico para inicializar app. Exemplo: python app = web: gunicorn wsgi:app   
+
+PYTHON MODULES install
+$python3 -m pip install <nome_modulo>
