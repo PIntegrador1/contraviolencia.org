@@ -42,7 +42,7 @@ app.config['SECRET_KEY'] = 'banco'
 app.root_path + '/' + 'templates/index.html'
 
 
-@app.route('/', methods=['GET','POST']) 
+ 
 @app.route('/index', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
