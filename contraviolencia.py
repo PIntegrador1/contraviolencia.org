@@ -1,3 +1,4 @@
+from typing import final
 import numpy as np
 from  matplotlib import pyplot as plt
 import pandas as pd
@@ -5,6 +6,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from flask import Flask, render_template, request, url_for, flash, redirect
 import psycopg2
+import pesquisa as ps 
+import delete as dl
 
 def get_db_conection():
     # Criando conexão no banco.
@@ -83,7 +86,8 @@ def login():
         
         #Escrever queries.
         db.commit()
-        
+       
+        #Fechar conexão; 
         db.close()
         
         
@@ -94,6 +98,7 @@ def login():
 
 @app.route('/logout')
 def logout():
+    db.close_all()
     return render_template('logout.html')
 
 @app.route('/<usuario>/logged', methods=['GET','POST'])
@@ -133,31 +138,24 @@ def result():
     
     #Mostrar página
     return render_template('result.html',n_linha=n_linha,legenda=legenda)
-
+              
+    
 @app.route('/admin', methods=['GET','POST'])
 def admin():
-    if request.method == 'POST':
-        #Abrir Conexão
-        eng = get_db_conection()
+    try:
+        pesquisa = ps.pesquisa()
+        
                 
-        #Entrada usuario.
-        tabela = request.form['table']
-        
-
-        #Resetar dados da tabela requerida.
-        eng.execute(f"delete from {tabela};")
-        
-        #Escrever mudanças.
-        db.commit()
-        
-        #Fechar Sessão.
-        db.close()       
-        
-       
-        #Saida
-        flash(f"Os registros foram TOTALMENTE apagados na tabela {tabela}.")
-        return redirect(url_for('tabela'))
+    except ValueError as e:
+        return render_template('admin.html',e)
+    
+    finally:
+        delete =   dl.delete()
+    
     return render_template('admin.html')
+       
+       
+       
 
 @app.route('/<post_id>/posts', methods=['GET','POST'])
 def posts(post_id):

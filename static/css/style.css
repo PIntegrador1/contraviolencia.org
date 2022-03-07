@@ -1,14 +1,17 @@
 
 html,body{
-    min-height: 100%;
-    padding: 10px;
-    margin: 2px;
+    width: 90%;
+    margin: 5px  auto;
+    min-width: 600px;
+    max-width: 600px;
+    padding: auto;
     border: 0px;
     color: black;
     text-align: center;
     background-color: white;
     background-image: url(image/tema.jpg);
     display: inline-block;
+    
    }
 div.post_id{
     

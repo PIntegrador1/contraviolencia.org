@@ -1,27 +1,23 @@
 #Bibliotecas
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, scoped_session
+import contraviolencia as cv
 import psycopg2
 
-# Criando conexão no banco.
-global eng
+
+#Criando conexão no banco.
 
 #Servidor Heroku.
-eng = create_engine("postgresql://gptmbrpnkclgjd:0dfbdfa12aa1d57939e7808873522f52184bb7d88142734618fa45b7bbbc187d@ec2-54-157-160-218.compute-1.amazonaws.com:5432/delep6os9o1a99")
+eng = cv.create_engine("postgresql://gptmbrpnkclgjd:0dfbdfa12aa1d57939e7808873522f52184bb7d88142734618fa45b7bbbc187d@ec2-54-157-160-218.compute-1.amazonaws.com:5432/delep6os9o1a99")
 
 #Servidor local.
 #eng = create_engine("postgresql://root:postgres@localhost:5432/postgres")
-#Criação de Sessão no banco.
 
-global db
-db = scoped_session(sessionmaker(bind=eng))
 
 #Ler cnfigurações de tabela padrão.
 with open("tables.sql") as arquivo:
     eng.execute(arquivo.read())
-    
 print("Tabelas USERS e REGISTROS Criadas.")
-
+    
+    
 #Criar tabela USERS
 eng.execute ("insert into public.users (ref, usuario, senha) values ( now()::timestamp(0),'admin','admin')")
 print("USER pdrão criado.")
@@ -34,7 +30,9 @@ print("REGISTRO padrão criado.")
 arquivo.close()
 
 #escrever no Bnaco de dados.
-db.commit()
+cv.db.commit()
 
 #Fechar conexão.
-db.close()
+cv.db.close()
+        
+    

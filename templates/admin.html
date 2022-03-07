@@ -7,7 +7,57 @@
        
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="shortcut icon" href="static/css/favicon.ico" />
+    <style>
+     form{
+    border: 1px #eee solid;
+    width: 520px;
+    margin: 0px;
+    height: 120px;
+    text-align: left;
+    padding: 40px;
+    font-size: 12px;
+    font-family: Verdana, Tahoma, sans-serif;
+    size: 50px;
+    display:inline-block;
+      }
+label {
+    border:0px solid #999;
+    outline: 0;
+    width: 420px;
+    text-align:left;
+    display: inline-block;
+        }
+input{
+    border:1px solid #999;
+    width: 420px;
+    text-align: left;
+    display: inline-block;
     
+      }
+
+input[type=submit]:hover{
+    padding: 0px;
+    width: 420px;
+    height: 100px;
+    resize: none;
+    outline: 0px;
+    border: 1px solid #999;
+    display: inline-block;
+     }
+textarea {
+    padding: 1px;
+    width: 420px;
+    height: 100px;
+    margin: 1px;
+    text-align: left;
+    resize: none;
+    outline: 0;
+    border: 1px solid #999;;
+    display: inline-block;
+    
+
+      }
+    </style>
     <title>Banco de Dados Público sobre Violência. </title>
     
     </head>
@@ -19,16 +69,42 @@
   <h4>{{ message }}</h4>
   {% endfor %}
 
+   <hr>
+    <p> {{bn}}linhas.</p>
+    <hr> 
+
+     <form method="post">
+    <label for="busca">Busca de Usuários Cadastrados: </label>
+   <button type=submit class=btn value="admin "action="pesquisa">Buscar</button>
+     
+      <table border="1">
+      <tr>
+        <td> id</td>
+        <td> referencia</td>
+         <td>usuario</td>
+          <td>senhad</td>
+      </tr>
+      {%for buser in buser%}  
+      <tr>
+        <td>{{buser[0]}}</td>
+        <td>{{buser[1]}}</td>
+        <td>{{buser[2]}}</td>
+        <td>{{buser[3]}}</td>
+        {%endfor%}
+      </tr>
+       </table>
+     </form>
+
+   
+<hr>
   <form method="post">
-    <label for="tabela"> Nome da Tabela: </label>
+   <label for="tabela"> Nome da Tabela: </label>
     <input type="text" name="table"
            placeholder="Nome da tabela" class="form-control"
      value="{{ request.form['table'] }}">        
-    
-      <button type=submit class=btn action="admin"
+   
+      <button type=submit class=btn  value="admin" action="delete"
       onclick="return confirm('Deseja realmente ZERAR esta tabela?')">Reset</button>
- <form>
-
-<hr>
-</body>
+  <hr>
+ </body>
 </html>
