@@ -65,3 +65,59 @@ $editor procfile (sem extensão) com o conteúdo básico para inicializar app. E
 
 PYTHON MODULES install
 $python3 -m pip install <nome_modulo>
+
+GERAR CERTIFICADO ROOT SSL (https-Site seguro)
+1.  sudo apt install openssl ca-certificates
+2.  sudo mkdir /var/www/ssl
+3.  cd /var/www/ssl
+4.  sudo openssl genrsa -out server.key 2048
+5.  sudo chmod 600 server.key
+6.  sudo openssl req -new -key server.key -out server.csr
+7.  sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+8.  sudo cp -v  server.key /etc/ssl/private/
+9.  sudo cp -v server.crt /etc/ssl/certs/
+10. sudo a2enmod ssl
+11.  arquivo de configuração do site em /etc/apache2/sites-enabled
+     
+
+<IfModule mod_ssl.c>
+
+   <VirtualHost _default_:443>
+
+       #email do administrador aqui
+
+       ServerAdmin webmaster@localhost
+
+       #Diretorio do site aqui
+
+       DocumentRoot /var/www/html
+
+       ErrorLog ${APACHE_LOG_DIR}/error.log
+
+       CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+       SSLEngine on
+
+       #certificados criados
+
+       SSLCertificateFile	/etc/ssl/certs/server.crt
+
+       SSLCertificateKeyFile /etc/ssl/private/server.key
+
+       <FilesMatch "\.(cgi|shtml|phtml|php)$">
+
+           SSLOptions +StdEnvVars
+
+       </FilesMatch>
+
+       <Directory /usr/lib/cgi-bin>
+
+           SSLOptions +StdEnvVars
+
+       </Directory>
+
+   </VirtualHost>
+
+</IfModule>
+
+12. sudo /etc/init.d/apache2 restart
