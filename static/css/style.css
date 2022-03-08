@@ -1,9 +1,9 @@
 
 html,body{
-    width: 90%;
+    width: auto;
     margin: 5px  auto;
-    min-width: 600px;
-    max-width: 600px;
+    min-width: 120 px;
+    max-width: 120 px;
     padding: auto;
     border: 0px;
     color: black;
@@ -107,9 +107,9 @@ li a:hover {
 }
 form{
     border: 1px #eee solid;
-    width: 520px;
+    width: auto;
     margin: 0px;
-    height: 420px;
+    height: 220px;
     text-align: left;
     padding: 40px;
     font-size: 12px;
@@ -126,7 +126,7 @@ label {
         }
 input{
     border:1px solid #999;
-    width: 420px;
+    width: auto;
     text-align: left;
     display: inline-block;
     
@@ -134,7 +134,7 @@ input{
 
 input[type=submit]:hover{
     padding: 0px;
-    width: 420px;
+    width: auto;
     height: 100px;
     resize: none;
     outline: 0px;
@@ -143,8 +143,8 @@ input[type=submit]:hover{
      }
 textarea {
     padding: 1px;
-    width: 420px;
-    height: 100px;
+    width: auto;
+    height: 80px;
     margin: 1px;
     text-align: left;
     resize: none;
@@ -156,7 +156,7 @@ textarea {
       }
 textarea2 {
     padding: 2px;
-    width: 520px;
+    width: auto;
     height: 0px;
     margin: 0px;
     text-align: left;
@@ -170,7 +170,7 @@ table {
     border: 0;
     display: inline-block;
     padding: 0px;
-    width: 520px;
+    width: auto;
     height: 100px;
     margin: 0px;
     text-align: left;
@@ -185,9 +185,9 @@ table {
 
 
 footer{
-    
+    padding: auto;
     border: 2px solid whitesmoke; 
-    width: 10p0x;
+    width: auto;
     height: 10px;
     margin:0px;
     display: inline;
