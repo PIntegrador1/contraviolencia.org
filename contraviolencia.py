@@ -14,10 +14,10 @@ def get_db_conection():
     global eng
     
     #Servidor Heroku.
-    eng = create_engine("postgresql://gptmbrpnkclgjd:0dfbdfa12aa1d57939e7808873522f52184bb7d88142734618fa45b7bbbc187d@ec2-54-157-160-218.compute-1.amazonaws.com:5432/delep6os9o1a99")
+    #eng = create_engine("postgresql://gptmbrpnkclgjd:0dfbdfa12aa1d57939e7808873522f52184bb7d88142734618fa45b7bbbc187d@ec2-54-157-160-218.compute-1.amazonaws.com:5432/delep6os9o1a99")
     
     #Servidor local.
-    #eng = create_engine("postgresql://root:postgres@localhost:5432/postgres")
+    eng = create_engine("postgresql://root:postgres@localhost:5432/postgres")
     
     #Criação de Sessão no banco.
     global db
@@ -98,7 +98,6 @@ def login():
 
 @app.route('/logout')
 def logout():
-    db.close_all()
     return render_template('logout.html')
 
 @app.route('/<usuario>/logged', methods=['GET','POST'])

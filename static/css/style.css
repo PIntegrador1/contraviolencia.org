@@ -1,18 +1,15 @@
 
 html,body{
-    width: auto;
-    margin: 5px  auto;
-    min-width: 120 px;
-    max-width: 120 px;
-    padding: auto;
-    border: 0px;
-    color: black;
-    text-align: center;
-    background-color: white;
-    background-image: url(image/tema.jpg);
-    display: inline-block;
-    
-   }
+min-height: 100%;
+padding: 10px;
+margin: 2px;
+border: 0px;
+color: black;
+text-align: center;
+background-color: white;
+background-image: url(/static/css/image/tema.jpg);
+display: inline-block;
+}
 div.post_id{
     
     min-height: 100%;
@@ -107,7 +104,7 @@ li a:hover {
 }
 form{
     border: 1px #eee solid;
-    width: auto;
+    width: 100 px;
     margin: 0px;
     height: 220px;
     text-align: left;
@@ -120,13 +117,13 @@ form{
 label {
     border:0px solid #999;
     outline: 0;
-    width: 420px;
+    width: 100px;
     text-align:left;
     display: inline-block;
         }
 input{
     border:1px solid #999;
-    width: auto;
+    width: 180px;
     text-align: left;
     display: inline-block;
     
@@ -134,7 +131,7 @@ input{
 
 input[type=submit]:hover{
     padding: 0px;
-    width: auto;
+    width: 120px;
     height: 100px;
     resize: none;
     outline: 0px;
@@ -143,7 +140,7 @@ input[type=submit]:hover{
      }
 textarea {
     padding: 1px;
-    width: auto;
+    width: 180px;
     height: 80px;
     margin: 1px;
     text-align: left;

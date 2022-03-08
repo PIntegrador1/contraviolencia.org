@@ -12,8 +12,7 @@
     
     </head>
   <body>
- <div>
-     
+      
         <h1> Banco de Dados Público sobre Violência.</h1>
         <h2> Interface de Autenticação </h2>
 
@@ -21,12 +20,13 @@
         <h4>{{ message }}</h4>
            {% endfor %}
 
-<form class="login-form" method=POST>
+        <form class="login-form" method=POST>
          <div class="form-group">
         <label form="title">Usuario</label>
         <input type="text" name="user"
                placeholder="Novo Usuario" class="form-control"
                value="{{ request.form['user'] }}"></input>
+         <br>
                
                
         <label form="title">Senha</label>
@@ -35,13 +35,8 @@
                value="{{ request.form['password'] }}"></input>
 
               <button type=submit class=btn  value="login">Novo</button>
-              
-              
-    </div>
-   
-              
-       
-</form>
+         </div>     
+           </form>
     
    
             </body>
